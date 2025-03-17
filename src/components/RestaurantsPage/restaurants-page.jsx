@@ -4,25 +4,23 @@ import { RestaurantTabs } from "../RestaurantTabs/restaurant-tabs";
 import { RestaurantInfo } from "../RestaurantInfo/restaurant-info";
 
 export function RestaurantsPage() {
-  const [clickedTab, setClickedTab] = useState(restaurants[0].id);
-
-  function handleClickedTab(id) {
-    return () => setClickedTab(id);
-  }
+  const [activeRestaurantId, setActiveRestaurantId] = useState(
+    restaurants[0].id
+  );
 
   return (
     <main>
       <nav>
         <RestaurantTabs
           restaurants={restaurants}
-          clickedTab={clickedTab}
-          handleClickedTab={handleClickedTab}
+          activeRestaurantId={activeRestaurantId}
+          onClickedTab={(id) => () => setActiveRestaurantId(id)}
         />
       </nav>
       <RestaurantInfo
-        key={clickedTab}
+        key={activeRestaurantId}
         restaurant={restaurants.find(
-          (restaurant) => restaurant.id === clickedTab
+          (restaurant) => restaurant.id === activeRestaurantId
         )}
       />
     </main>
