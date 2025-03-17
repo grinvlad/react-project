@@ -139,4 +139,28 @@ export const restaurants = [
       },
     ],
   },
+  {
+    id: "9c26410c-1a42-4ce2-bc08-58368b63e7ee",
+    name: "Mangal House",
+    menu: [
+      {
+        id: "bf22ac2f-5434-4a14-8528-0f251f0936aa",
+        name: "pork neck",
+        price: 12,
+        ingredients: ["pork"],
+      },
+      {
+        id: "72f52c91-844d-4b8c-9319-78490e84d4d0",
+        name: "shawarma",
+        price: 3,
+        ingredients: [
+          "chicken",
+          "lettuce leaves",
+          "spices",
+          "yougurn sauce",
+          "onion",
+        ],
+      },
+    ],
+  },
 ];
