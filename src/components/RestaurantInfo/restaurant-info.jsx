@@ -1,30 +1,6 @@
+import { RestaurantMenu } from "../RestaurantMenu/restaurant-menu";
+import { RestaurantReviews } from "../RestaurantReviews/restaurant-reviews";
 import { RatingSeesaw } from "../RatingSeesaw/rating-seesaw";
-
-function RestaurantMenu({ menu }) {
-  return (
-    <ul>
-      {menu.map((item) => (
-        <li key={item.id}>{item.name}</li>
-      ))}
-    </ul>
-  );
-}
-
-function RestaurantReviews({ reviews }) {
-  if (!reviews) {
-    return <p>no reviews</p>;
-  }
-
-  return (
-    <ul>
-      {reviews.map((review) => (
-        <li key={review.id}>
-          {review.text} — {review.rating}/5
-        </li>
-      ))}
-    </ul>
-  );
-}
 
 export function RestaurantInfo({ restaurant }) {
   return (
