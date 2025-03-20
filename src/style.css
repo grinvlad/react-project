@@ -92,7 +92,11 @@
     display: inline-block;
   }
 
-  .rating-seesaw {
+  .counter {
     line-height: initial;
+  }
+
+  .review-form > * {
+    margin-block-start: 1rem;
   }
 }
