@@ -13,7 +13,7 @@ export function useProgress() {
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
-  });
+  }, []);
 
   return progress;
 }
