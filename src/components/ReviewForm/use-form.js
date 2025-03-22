@@ -1,4 +1,4 @@
-import { useReducer } from "react";
+import { useCallback, useReducer } from "react";
 
 const MIN_RATING = 1;
 const MAX_RATING = 5;
@@ -49,25 +49,30 @@ function formReducer(form, action) {
 export const useForm = () => {
   const [form, dispatch] = useReducer(formReducer, INITIAL_FORM);
 
-  const updateName = (name) => {
-    dispatch({ type: actionTypes.UPDATE_NAME, name: name });
-  };
+  const updateName = useCallback(
+    (name) => dispatch({ type: actionTypes.UPDATE_NAME, name: name }),
+    []
+  );
 
-  const updateReview = (review) => {
-    dispatch({ type: actionTypes.UPDATE_REVIEW, review: review });
-  };
+  const updateReview = useCallback(
+    (review) => dispatch({ type: actionTypes.UPDATE_REVIEW, review: review }),
+    []
+  );
 
-  const incrementRating = () => {
-    dispatch({ type: actionTypes.INCREMENT_RATING });
-  };
+  const incrementRating = useCallback(
+    () => dispatch({ type: actionTypes.INCREMENT_RATING }),
+    []
+  );
 
-  const decrementRating = () => {
-    dispatch({ type: actionTypes.DECREMENT_RATING });
-  };
+  const decrementRating = useCallback(
+    () => dispatch({ type: actionTypes.DECREMENT_RATING }),
+    []
+  );
 
-  const clearForm = () => {
-    dispatch({ type: actionTypes.CLEAR_FORM });
-  };
+  const clearForm = useCallback(
+    () => dispatch({ type: actionTypes.CLEAR_FORM }),
+    []
+  );
 
   return {
     form,

@@ -7,6 +7,9 @@ export function RestaurantsPage() {
   const [activeRestaurantId, setActiveRestaurantId] = useState(
     restaurants[0].id
   );
+  const activeRestaurant = restaurants.find(
+    (restaurant) => restaurant.id === activeRestaurantId
+  );
 
   return (
     <main>
@@ -17,12 +20,13 @@ export function RestaurantsPage() {
           onClickedTab={(id) => () => setActiveRestaurantId(id)}
         />
       </nav>
-      <RestaurantInfo
-        key={activeRestaurantId}
-        restaurant={restaurants.find(
-          (restaurant) => restaurant.id === activeRestaurantId
-        )}
-      />
+      <RestaurantInfo restaurant={activeRestaurant} />
+      <RestaurantInfo restaurant={activeRestaurant} />
+      <RestaurantInfo restaurant={activeRestaurant} />
+      <RestaurantInfo restaurant={activeRestaurant} />
+      <RestaurantInfo restaurant={activeRestaurant} />
+      <RestaurantInfo restaurant={activeRestaurant} />
+      <RestaurantInfo restaurant={activeRestaurant} />
     </main>
   );
 }
